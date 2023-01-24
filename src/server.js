@@ -42,6 +42,6 @@ const handleListen = () => {
     console.log(`http://localhost:3000 is now running`);
     console.log(`ws://localhost:3000 is now running`);
 }
-server.listen(3000, handleListen);
+server.listen(process.env.PORT || 8080, handleListen);
 
 
