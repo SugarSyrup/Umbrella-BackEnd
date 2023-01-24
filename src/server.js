@@ -1,6 +1,10 @@
 import express from 'express';
 import http from "http";
-import WebSocket from "ws";
+import WebSocket, {WebSocketServer} from "ws";
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -13,7 +17,7 @@ app.get("/*", (_, res) => res.redirect("/"));
 
 //WebSocket
 const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocketServer({ server });
 const sockets = [];
 
 wss.on("connection", (socket) => {  

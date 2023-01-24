@@ -4,7 +4,9 @@
   "description": "Umbrella BackEnd Server",
   "author": "",
   "license": "MIT",
+  "type": "module",
   "scripts": {
+    "start" : "node src/server.js",
     "dev" : "nodemon"
   },
   "devDependencies": {
