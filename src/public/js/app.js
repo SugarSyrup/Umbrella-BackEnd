@@ -1,4 +1,4 @@
-const socket = new WebSocket(`ws://${window.location.host}`);
+const socket = new WebSocket(`wss://${window.location.host}`);
 
 socket.addEventListener("open", () => {
     console.log("Connected to Server ✅");
@@ -30,12 +30,12 @@ function handleSubmit(event) {
     input.value = "";
 }
 
-function handleNickSubmit(event) {
-    event.preventDefault();
-    const input = nickForm.querySelector("input");
-    socket.send(makeMessage("nickname", input.value));
-    input.value = "";
-}
+// function handleNickSubmit(event) {
+//     event.preventDefault();
+//     const input = nickForm.querySelector("input");
+//     socket.send(makeMessage("nickname", input.value));
+//     input.value = "";
+// }
   
 messageForm.addEventListener("submit", handleSubmit);
-nickForm.addEventListener("submit", handleNickSubmit);
+// nickForm.addEventListener("submit", handleNickSubmit);
